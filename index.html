@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Handout Store</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- IMPORTANT: defer ensures JS loads properly -->
+  <script src="admin.js" defer></script>
+</head>
+
+<body>
+
+<h1>📚 Student Handout Store</h1>
+
+<!-- 🔐 LOGIN / REGISTER -->
+<div id="authBox" class="container">
+  <h2>Login</h2>
+
+  <input type="email" id="email" placeholder="Email"> 
+<input type="password" id="pass" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <h3>Register</h3>
+
+  <input id="regEmail" placeholder="Email">
+  <input id="regPass" type="password" placeholder="Password">
+  <button onclick="register()">Register</button>
+</div>
+
+<!-- 🛒 APP -->
+<div id="app" style="display:none;">
+
+  <div class="container">
+
+    <button onclick="logout()">Logout</button>
+
+    <h2>Select Courses</h2>
+    <div id="courseList"></div>
+
+    <button onclick="calculateTotal()">Calculate Total</button>
+
+    <h3 id="total"></h3>
+
+    <hr>
+
+    <h2>Payment (Transfer)</h2>
+
+    <p><b>Bank:</b> Opay</p>
+    <p><b>Name:</b> ABUBAKAR SADIQ HUSSAINI</p>
+    <p><b>Account:</b> 9069189457</p>
+
+    <input id="payerName" placeholder="Your Name">
+    <input id="payerAdmissionnumber" placeholder="Admission number">
+
+    <button onclick="confirmTransfer()">I Have Paid</button>
+
+    <button onclick="generatePDF()">Download Receipt</button>
+    <button onclick="sendWhatsApp()">Send to WhatsApp</button>
+
+    <hr>
+
+    <h2>📢 Recent Payments</h2>
+    <ul id="paymentList"></ul>
+
+    <button id="adminBtn">Admin Panel</button>
+<h3>Admin Login</h3>
+<input type="password" id="adminPass" placeholder="Enter admin password">
+<button onclick="adminLogin()">Admin Login</button>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+</script>
+
+</body>
+</html>

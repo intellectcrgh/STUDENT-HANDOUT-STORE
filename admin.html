@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 🔐 ADMIN PROTECTION (ADD THIS) -->
+  <script>
+    if (sessionStorage.getItem("isAdmin") !== "true") {
+      alert("Access denied! Admin only.");
+      window.location.href = "index.html";
+    }
+  </script>
+
+</head>
+<body>
+
+<h1>⚙️ Admin Dashboard</h1>
+<button onclick="adminLogout()">Logout</button>
+<div class="container">
+
+  <h2>➕ Add Course</h2>
+  <input id="courseName" placeholder="Course Name">
+  <input id="coursePrice" placeholder="Price">
+  <button onclick="addCourse()">Add Course</button>
+  <h2>📚 Courses</h2>
+  <ul id="courseAdminList"></ul>
+
+  <h2>💰 Payments</h2>
+
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Courses</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+<h2>Users</h2>
+<table border="1">
+  <tbody id="usersTable"></tbody>
+</table>
+    <tbody id="paymentTable"></tbody>
+    <table id="adminTable"></table>
+  </table>
+
+</div>
+
+<!-- 2. Your JS LAST -->
+ 
+<script src="admin.js"></script>
+</body>
+</html>
